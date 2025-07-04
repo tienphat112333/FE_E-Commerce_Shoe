@@ -3,7 +3,7 @@ import { FiHeart } from "react-icons/fi";
 
 const Navigation = () => {
   return (
-    <nav className="flex border-b-2 border-solid border-b-gray-200 justify-around items-center p-[20px] ml-[2rem] z-[999]">
+    <nav className="flex border-b-2 border-solid border-b-gray-200 justify-around items-center p-[20px] ml-[2rem] z-[999]  ">
       <div>
         <input
           type="text"
