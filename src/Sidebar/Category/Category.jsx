@@ -1,9 +1,11 @@
+import Input from "../../components/Input";
+
 const Category = () => {
   return (
     <div>
       <h2 className="text-2xl">Category</h2>
       <div className="flex flex-col items-baseline mt-[1rem]">
-        <label className="pb-2">
+        {/* <label className="pb-2">
           <input type="radio" name="test" />
           <span></span> All
         </label>
@@ -22,7 +24,12 @@ const Category = () => {
         <label className="pb-2">
           <input type="radio" name="test" />
           <span></span> Heels
-        </label>
+        </label> */}
+        <Input />
+        <Input />
+        <Input />
+        <Input />
+        <Input />
       </div>
     </div>
   );
