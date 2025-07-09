@@ -1,35 +1,43 @@
 import Input from "../../components/Input";
 
-const Category = () => {
+const Category = ({ handleRadioChange }) => {
   return (
     <div>
       <h2 className="text-2xl">Category</h2>
       <div className="flex flex-col items-baseline mt-[1rem]">
-        {/* <label className="pb-2">
-          <input type="radio" name="test" />
-          <span></span> All
-        </label>
         <label className="pb-2">
-          <input type="radio" name="test" />
-          <span></span> Sneakers
+          <input
+            type="radio"
+            onChange={handleRadioChange}
+            value=""
+            name="test"
+          />
+          <label></label>All
         </label>
-        <label className="pb-2">
-          <input type="radio" name="test" />
-          <span></span> Flats
-        </label>
-        <label className="pb-2">
-          <input type="radio" name="test" />
-          <span></span> Sandals
-        </label>
-        <label className="pb-2">
-          <input type="radio" name="test" />
-          <span></span> Heels
-        </label> */}
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-        <Input />
+        <Input
+          handleChange={handleRadioChange}
+          name="test"
+          value="sneakers"
+          title="Sneakers"
+        />
+        <Input
+          handleChange={handleRadioChange}
+          name="test"
+          value="flats"
+          title="FLats"
+        />
+        <Input
+          handleChange={handleRadioChange}
+          name="test"
+          value="sandals"
+          title="Sandals"
+        />
+        <Input
+          handleChange={handleRadioChange}
+          name="test"
+          value="heels"
+          title="Heels"
+        />
       </div>
     </div>
   );

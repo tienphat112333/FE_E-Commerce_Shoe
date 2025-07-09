@@ -1,17 +1,8 @@
-import Card from "../components/Card";
-
-const Product = () => {
+const Product = ({ result }) => {
   return (
     <>
       <section className="flex flex-wrap pl-[20rem] mt-8 -z-10 ml-2">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {result}
       </section>
     </>
   );

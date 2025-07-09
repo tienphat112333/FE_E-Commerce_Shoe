@@ -3,9 +3,9 @@ import Navigation from "./navigation/Navigation";
 import Product from "./Product/Product";
 import Recommended from "./Recommended/Recommended";
 import Sidebar from "./Sidebar/Sidebar";
+import Card from "./components/Card";
 // data
 import products from "./database/data";
-import Card from "./components/Card";
 
 const App = () => {
   const [selectedCategory, setSeclectedCategory] = useState(null);
@@ -38,21 +38,23 @@ const App = () => {
     if (selected) {
       filterProducts = filterProducts.filter(
         ({ category, color, company, newPrice, title }) => {
-          category === selected ||
+          return (
+            category === selected ||
             color === selected ||
             company === selected ||
             newPrice === selected ||
-            title === selected;
+            title === selected
+          );
         }
       );
     }
+
     return filterProducts.map(
-      ({ img, title, star, reviews, prevPrice, newPrice }) => (
+      ({ img, title, reviews, prevPrice, newPrice }) => (
         <Card
           key={Math.random()}
           img={img}
           title={title}
-          star={star}
           reviews={reviews}
           prevPrice={prevPrice}
           newPrice={newPrice}
@@ -61,12 +63,14 @@ const App = () => {
     );
   }
 
+  const result = filterData(products, selectedCategory, query);
+
   return (
     <>
-      <Sidebar />
-      <Navigation />
-      <Recommended />
-      <Product />
+      <Sidebar handleRadioChange={handleRadioChange} />
+      <Navigation query={query} handleInputChange={handleInputChange} />
+      <Recommended handleClick={handleClick} />
+      <Product result={result} />
     </>
   );
 };

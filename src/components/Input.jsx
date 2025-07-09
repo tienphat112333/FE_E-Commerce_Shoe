@@ -1,8 +1,9 @@
-const Input = () => {
+const Input = ({ handleChange, value, name, color, title }) => {
   return (
     <label className="pb-2">
-      <input type="radio" name="test2" />
-      <span></span>All
+      <input onChange={handleChange} value={value} type="radio" name={name} />
+      <span style={{ backgroundColor: color }}></span>
+      {title}
     </label>
   );
 };
